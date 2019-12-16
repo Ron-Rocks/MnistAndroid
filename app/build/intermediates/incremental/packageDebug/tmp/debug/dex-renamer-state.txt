@@ -1,0 +1,7 @@
+#Mon Dec 16 18:45:50 IST 2019
+base.0=D\:\\Code in\\MnistApp\\App\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=D\:\\Code in\\MnistApp\\App\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

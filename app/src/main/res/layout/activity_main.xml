@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#B20000">
+
+    <TextView
+        android:id="@+id/classText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text = "Number : "
+        android:textSize="35dp"
+        android:textColor="#0000FF"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/probText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text = "Probability : "
+        android:textSize="35dp"
+        android:textColor="#0000FF"
+        android:textStyle="bold"/>
+
+    <com.nex3z.fingerpaintview.FingerPaintView
+        android:id="@+id/fpv_paint"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:foreground="@drawable/shape_file"
+        android:background="#ffff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="75dp">
+
+        <Button
+            android:id="@+id/detectButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DETECT"
+            android:background="#f0ff00"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            />
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CLEAR"
+            android:textSize="20dp"
+            android:background="#f0ff00"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+</LinearLayout>
