@@ -30,26 +30,23 @@ public class Classifier {
 
             imgData.order(ByteOrder.nativeOrder());
 
-
-
-
     }
-        public Resulter classify(Bitmap bitmap){
-        results = new float[1][classes];
-            convertBitmapToByteBuffer(bitmap);
-            interpretor.run(imgData,results);
-
-            return new Resulter(results[0]);
+    public Resulter classify(Bitmap bitmap){
+       results = new float[1][classes];
+       convertBitmapToByteBuffer(bitmap);
+       interpretor.run(imgData,results);
+        
+       return new Resulter(results[0]);
         }
+    
     public MappedByteBuffer loadModel(Activity activity) throws IOException {
+        
         AssetFileDescriptor fileDescriptor = activity.getAssets().openFd(modelName);
 
         FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
-
         FileChannel fileChannel = inputStream.getChannel();
 
         long startOffset = fileDescriptor.getStartOffset();
-
         long declaredLength = fileDescriptor.getDeclaredLength();
 
         return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
@@ -59,25 +56,22 @@ public class Classifier {
     private void convertBitmapToByteBuffer(Bitmap bitmap) {
 
         if (imgData == null) {
-
             return;
-
         }
+        
         imgData.rewind();
+        
         bitmap.getPixels(imgPixels, 0, bitmap.getWidth(), 0, 0,
-
-                bitmap.getWidth(), bitmap.getHeight());
-
-
+        bitmap.getWidth(), bitmap.getHeight());
 
         int pixel = 0;
-
+        
         for (int i = 0; i < imgSize; ++i) {
-
+            
             for (int j = 0; j < imgSize; ++j) {
 
                 int value = imgPixels[pixel++];
-
+                
                 imgData.putFloat(convertPixel(value));
 
             }
